@@ -1,0 +1,21 @@
+data:
+  raw_fake_path: "data/Fake.csv"
+  raw_true_path: "data/True.csv"
+  processed_data_path: "data/processed_data.csv"
+  test_size: 0.2
+  random_state: 42
+
+preprocessing:
+  use_stemming: true
+  use_lemmatization: false
+  max_features: 5000
+
+model:
+  path: "models/fake_news_model.joblib"
+  vectorizer_path: "models/vectorizer.joblib"
+  type: "logistic_regression" # Options: logistic_regression, naive_bayes, svm
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false

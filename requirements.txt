@@ -1,0 +1,13 @@
+pandas
+numpy
+scikit-learn
+nltk
+pyyaml
+fastapi
+uvicorn
+joblib
+pytest
+python-multipart
+# For BERT (optional enhancement)
+# torch
+# transformers
