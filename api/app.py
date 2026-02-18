@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from src.predict import Predictor
 import uvicorn
@@ -9,6 +10,17 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Fake News Classifier API", description="Production-ready API for detecting fake news.")
+
+# Simplified CORS for demo purposes
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+logger.info("CORS Middleware configured with allow_origins=['*']")
 
 # Global predictor instance
 predictor = None
